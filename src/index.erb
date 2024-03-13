@@ -1,0 +1,13 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+
+layout: default
+---
+
+<div>
+  <% collections.posts.resources.each do |post| %>
+    <div class="border-y border-accent">
+      <a href="<%= post.relative_url %>"><%= post.data.title %></a>
+    </div>
+  <% end %>
+</div>

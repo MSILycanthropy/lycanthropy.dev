@@ -9,13 +9,6 @@ import { Application } from "@hotwired/stimulus"
  */
 import * as TurboShadow from "turbo-shadow"
 
-/**
- * Uncomment the line below to add transition animations when Turbo navigates.
- * Use data-turbo-transition="false" on your <main> element for pages where
- * you don't want any transition animation.
- */
-// import "./turbo_transitions.js"
-
 // Import all JavaScript & CSS files from src/_components
 import components from "$components/**/*.{js,jsx,js.rb,css}"
 
@@ -30,6 +23,8 @@ Object.entries(controllers).forEach(([filename, controller]) => {
       .replace(/[_-]controller\..*$/, "")
       .replace("_", "-")
       .replace("/", "--")
+
+    console.log(`Registering Stimulus controller: ${identifier}`)
 
     Stimulus.register(identifier, controller.default)
   }

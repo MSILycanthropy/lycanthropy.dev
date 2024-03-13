@@ -1,3 +1,4 @@
-<footer>
-  Contact me at <a href="mailto:<%= metadata.email %>"><%= metadata.email %></a>
+<footer class="text-neutral bg-secondary rounded-md p-4 mx-auto w-fit flex flex-col items-center gap-3">
+  <%= render 'socials' %>
 </footer>
+<div class="text-center text-xs text-neutral/75 pt-1">© <%= Time.now.year %> <%= site.metadata.me %></div>

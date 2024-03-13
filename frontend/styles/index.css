@@ -12,3 +12,9 @@
   src: local('')
        url("../fonts/ComicCodeLigatures-Regular.otf") format("opentype")
 }
+
+/* If you need to add custom styles, do so down here */
+
+svg {
+  fill: currentColor;
+}
