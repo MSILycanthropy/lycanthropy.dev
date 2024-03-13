@@ -29,3 +29,8 @@ Object.entries(controllers).forEach(([filename, controller]) => {
     Stimulus.register(identifier, controller.default)
   }
 })
+
+const buttons = [...document.querySelectorAll('.btn.no-animation')]
+buttons.forEach((btn) => {
+  btn.classList.remove('no-animation')
+})

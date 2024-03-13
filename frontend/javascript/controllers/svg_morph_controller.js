@@ -22,7 +22,6 @@ export default class extends Controller {
   }
 
   unmorph() {
-
     select(this.originalTarget.querySelector("path"))
       .style('display', 'block')
       .call((sel) => {
