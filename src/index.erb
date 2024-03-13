@@ -6,8 +6,17 @@ layout: default
 
 <div>
   <% collections.posts.resources.each do |post| %>
-    <div class="border-y border-accent">
-      <a href="<%= post.relative_url %>"><%= post.data.title %></a>
+    <div class="border-y-2 border-accent py-10 grid grid-cols-[auto_1fr] items-start gap-48 pl-40">
+      <div data-controller="localize-date" class="text-lg font-semibold"><%= post.data.date %></div>
+      <div>
+        <a href="<%= post.relative_url %>" class="underline text-2xl text-neutral hover:text-primary font-semibold"><%= post.data.title %></a>
+        <div class="prose xl:prose truncate"><%= post.summary %></div>
+        <div class="flex gap-1">
+          <% post.data.categories.each do |category| %>
+            <div class="bg-primary rounded-full text-sm font-semibold tracking-wide text-white px-1.5"><%= category %></div>
+          <% end %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>

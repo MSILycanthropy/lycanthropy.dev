@@ -24,8 +24,6 @@ Object.entries(controllers).forEach(([filename, controller]) => {
       .replace("_", "-")
       .replace("/", "--")
 
-    console.log(`Registering Stimulus controller: ${identifier}`)
-
     Stimulus.register(identifier, controller.default)
   }
 })

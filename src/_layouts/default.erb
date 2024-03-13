@@ -3,7 +3,7 @@
   <head>
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
-  <body class="<%= data.layout %> <%= data.page_class %> flex flex-col min-h-screen">
+  <body class="<%= data.layout %> <%= data.page_class %> flex flex-col min-h-screen text-neutral">
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
     <main class="container 2xl:max-w-7xl mx-auto flex-1">
