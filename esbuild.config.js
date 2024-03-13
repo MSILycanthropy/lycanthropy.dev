@@ -37,6 +37,9 @@ const esbuildOptions = {
   ],
   globOptions: {
     excludeFilter: /\.(dsd|lit)\.css$/
+  },
+  loader: {
+    '.otf': 'file'
   }
 }
 
