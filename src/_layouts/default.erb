@@ -3,11 +3,19 @@
   <head>
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
-  <body class="<%= data.layout %> <%= data.page_class %> flex flex-col min-h-screen text-neutral">
-    <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
+  <body data-controller="view-more"
+        class="<%= data.layout %> <%= data.page_class %> overflow-hidden flex flex-col min-h-screen text-neutral">
+    <%= render Navbar.new(metadata: site.metadata, resource: resource) %>
 
-    <main class="container 2xl:max-w-7xl mx-auto flex-1">
+    <main data-view-more-target="more"
+          class="container min-h-screen sm:min-h-fit 2xl:max-w-7xl mx-auto flex-1">
       <%= yield %>
+
+      <nav class="mx-auto w-fit flex gap-3 sm:gap-6 pt-9">
+        <%= render ButtonLink.new(href: '/', text: "Posts", data_test: '/') %>
+        <%= render ButtonLink.new(href: '/about', text: "About") %>
+        <%= render ButtonLink.new(href: '/demos', text: "Demos") %>
+      </nav>
     </main>
 
     <%= render "footer", metadata: site.metadata %>

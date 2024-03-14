@@ -1,0 +1,10 @@
+<a title="<%= @title %>"
+   target="_blank"
+   rel="me"
+   href="<%= @href %>"
+   class="w-10 h-10 sm:w-16 sm:h-16 aspect-square rounded-xl ring-1 ring-neutral bg-white flex items-center justify-center"
+   data-controller="svg-morph"
+   data-action="mouseenter->svg-morph#morph mouseleave->svg-morph#unmorph">
+  <%= slotted :original %>
+  <%= slotted :morph %>
+</a>

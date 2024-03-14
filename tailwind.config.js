@@ -15,15 +15,15 @@ module.exports = {
     themes: [
       {
         albarn: {
-          "primary": "#22697D",
+          "primary": "#7c98fd",
           "secondary": "#C4F4C7",
-          "accent": "#c1cefe",
+          "accent": "#caf3f7",
           "neutral": "#0A0F0D",
-          "base-100": "#e1a885",
-          "info": "#6CCFF6",
-          "success": "#98C9A3",
-          "warning": "#D00000",
-          "error": "#e40066",
+          "base-100": "#f7ddca",
+          "info": "#2094f3",
+          "success": "#009485",
+          "warning": "#ff9900",
+          "error": "#ff5724",
         },
       },
     ],
