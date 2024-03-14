@@ -4,15 +4,17 @@
 layout: default
 ---
 <%# TODO: Container queries here %>
-<div class="grid grid-cols-1 lg:grid-cols-2 h-full mt-8 lg:mt-0">
+<div class="grid grid-cols-1 h-full mx-auto w-fit mt-8 lg:mt-0">
   <% collections.posts.resources.each do |post| %>
-    <% 10.times do %>
+    <% 5.times do %>
       <div class="border-t border-neutral pt-4 px-6 lg:border-none">
-        <a href="<%= post.relative_url %>" class="underline text-lg 2xl:text-3xl text-neutral hover:text-primary font-semibold"><%= post.data.title %></a>
+        <%= render Link.new(href: post.relative_url, relative: false, class: "underline text-lg 2xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
+          <%= post.data.title %>
+        <% end %>
         <div class="prose xl:prose truncate"><%= post.summary %></div>
         <div class="flex justify-center lg:justify-start mt-2.5 mb-2 gap-1">
           <% post.data.categories.each do |category| %>
-            <div class="bg-info rounded-lg lg:rounded-xl text-sm lg:text-lg font-bold tracking-wide text-white px-2 py-0.5"><%= category %></div>
+            <div class="bg-info rounded-lg text-sm font-bold tracking-wide text-white px-2 py-0.5"><%= category %></div>
           <% end %>
         </div>
         <div class="text-center text-xs lg:text-sm font-semibold tracking-wider mt-1 mb-2">
@@ -20,7 +22,7 @@ layout: default
             <%= post.data.date %>
           </span>
         </div>
-        <hr class="border-[#8B8B8B] w-1/2 mx-auto">
+        <hr class="border-[#8B8B8B] w-1/2 mx-auto hidden lg:block">
       </div>
     <% end %>
   <% end %>

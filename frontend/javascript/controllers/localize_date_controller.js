@@ -2,13 +2,20 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   connect() {
-    this.#localizeDate()
+    document.addEventListener(
+      "turbo:load",
+      () => {
+        this.#localizeDate();
+      },
+      { once: true }
+    );
   }
 
   #localizeDate() {
-    const date = new Date(this.element.textContent)
-    this.element.textContent = new Intl.DateTimeFormat('en-US', {
-      dateStyle: 'long',
-    }).format(date)
+    console.log(this.element.innerText);
+    const date = new Date(this.element.innerText);
+    this.element.innerText = new Intl.DateTimeFormat(undefined, {
+      dateStyle: "long",
+    }).format(date);
   }
 }

@@ -1,6 +1,7 @@
 class Link < Bridgetown::Component
-  def initialize(href:, class: nil, **props)
+  def initialize(href:, class: nil, relative: true, **props)
     @href = href
+    @relative = relative
     @class = binding.local_variable_get(:class)
     @props = props
   end
