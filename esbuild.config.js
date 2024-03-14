@@ -41,7 +41,7 @@ const esbuildOptions = {
   loader: {
     '.otf': 'file'
   },
-  publicPath: "/lycanthropy.dev"
+  publicPath: "/lycanthropy.dev/_bridgetown/static"
 }
 
 build(esbuildOptions)
