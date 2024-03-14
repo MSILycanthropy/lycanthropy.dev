@@ -40,7 +40,8 @@ const esbuildOptions = {
   },
   loader: {
     '.otf': 'file'
-  }
+  },
+  publicPath: "/lycanthropy.dev"
 }
 
 build(esbuildOptions)
