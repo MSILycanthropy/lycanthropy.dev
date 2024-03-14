@@ -1,7 +1,13 @@
 import "$styles/index.css"
 import "$styles/syntax-highlighting.css"
 import * as Turbo from "@hotwired/turbo"
+
 import { Application } from "@hotwired/stimulus"
+
+document.addEventListener("turbo:before-visit", () => {
+  // Push to history on Turbo visit
+  window.history.pushState({}, "", event.detail.url)
+})
 
 /**
  * Adds support for declarative shadow DOM. Requires your HTML <head> to include:
@@ -11,8 +17,6 @@ import * as TurboShadow from "turbo-shadow"
 
 // Import all JavaScript & CSS files from src/_components
 import components from "$components/**/*.{js,jsx,js.rb,css}"
-
-console.info("Bridgetown is loaded!")
 
 window.Stimulus = Application.start()
 
@@ -28,7 +32,3 @@ Object.entries(controllers).forEach(([filename, controller]) => {
   }
 })
 
-const buttons = [...document.querySelectorAll('.btn.no-animation')]
-buttons.forEach((btn) => {
-  btn.classList.remove('no-animation')
-})

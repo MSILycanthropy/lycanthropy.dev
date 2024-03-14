@@ -4,19 +4,23 @@
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
   <body data-controller="view-more"
-        class="<%= data.layout %> <%= data.page_class %> overflow-hidden flex flex-col min-h-screen text-neutral">
-    <%= render Navbar.new(metadata: site.metadata, resource: resource) %>
+        class="<%= data.layout %> <%= data.page_class %> flex flex-col min-h-dvh text-neutral">
+    <div class="container mx-auto flex flex-col lg:flex-row lg:gap-24 flex-1 items-center justify-center">
+      <%= render Navbar.new(metadata: site.metadata, resource: resource) %>
 
-    <main data-view-more-target="more"
-          class="container min-h-screen sm:min-h-fit 2xl:max-w-7xl mx-auto flex-1">
-      <%= yield %>
+      <main data-view-more-target="more"
+            class="relative min-h-dvh sm:aspect-square 2xl:aspect-video lg:min-h-fit mx-auto lg:m-0 flex-1 h-[80vh] lg:ring-1 lg:ring-neutral lg:rounded-3xl">
+        <nav class="mx-auto w-fit flex gap-3 lg:gap-6 pt-9 lg:pt-0 lg:absolute bg-base-100 lg:-top-5 lg:left-12 lg:px-2" data-turbo-permanent>
+          <%= render ButtonLink.new(href: '/', text: "Posts") %>
+          <%= render ButtonLink.new(href: '/about', text: "About") %>
+          <%= render ButtonLink.new(href: '/demos', text: "Demos") %>
+        </nav>
 
-      <nav class="mx-auto w-fit flex gap-3 sm:gap-6 pt-9">
-        <%= render ButtonLink.new(href: '/', text: "Posts", data_test: '/') %>
-        <%= render ButtonLink.new(href: '/about', text: "About") %>
-        <%= render ButtonLink.new(href: '/demos', text: "Demos") %>
-      </nav>
-    </main>
+        <div class="lg:p-12 h-full overflow-y-auto">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
 
     <%= render "footer", metadata: site.metadata %>
   </body>

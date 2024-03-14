@@ -3,21 +3,24 @@
 
 layout: default
 ---
-
-<div>
-  <% if false %>
-    <% collections.posts.resources.each do |post| %>
-      <div class="border-y-2 border-accent py-10 grid grid-cols-[auto_1fr] items-start gap-48 pl-40">
-        <div data-controller="localize-date" class="text-lg font-semibold"><%= post.data.date %></div>
-        <div>
-          <a href="<%= post.relative_url %>" class="underline text-2xl text-neutral hover:text-primary font-semibold"><%= post.data.title %></a>
-          <div class="prose xl:prose truncate"><%= post.summary %></div>
-          <div class="flex gap-1">
-            <% post.data.categories.each do |category| %>
-              <div class="bg-primary rounded-full text-sm font-semibold tracking-wide text-white px-1.5"><%= category %></div>
-            <% end %>
-          </div>
+<%# TODO: Container queries here %>
+<div class="grid grid-cols-1 lg:grid-cols-2 h-full mt-8 lg:mt-0">
+  <% collections.posts.resources.each do |post| %>
+    <% 12.times do %>
+      <div class="border-t border-neutral pt-4 px-6 lg:border-none">
+        <a href="<%= post.relative_url %>" class="underline text-lg 2xl:text-3xl text-neutral hover:text-primary font-semibold"><%= post.data.title %></a>
+        <div class="prose xl:prose truncate"><%= post.summary %></div>
+        <div class="flex justify-center lg:justify-start mt-2.5 mb-2 gap-1">
+          <% post.data.categories.each do |category| %>
+            <div class="bg-info rounded-lg lg:rounded-xl text-sm lg:text-lg font-bold tracking-wide text-white px-2 py-0.5"><%= category %></div>
+          <% end %>
         </div>
+        <div class="text-center text-xs lg:text-sm font-semibold tracking-wider mt-1 mb-2">
+          <span data-controller="localize-date">
+            <%= post.data.date %>
+          </span>
+        </div>
+        <hr class="border-[#8B8B8B] w-1/2 mx-auto">
       </div>
     <% end %>
   <% end %>

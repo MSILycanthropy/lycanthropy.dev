@@ -17,4 +17,7 @@ html, body {
   @apply font-comic-code;
 }
 
+.animate-button-pop {
+  animation: button-pop var(--animation-btn, 0.25s) ease-out;
+}
 /* If you need to add custom styles, do so down here */
