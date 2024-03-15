@@ -10,14 +10,15 @@
 @font-face {
   font-family: "Comic Code Ligatures";
   src: local('')
-       url("../fonts/ComicCodeLigatures-Regular.otf") format("opentype")
+       url("/ComicCodeLigatures-Regular.woff") format("woff")
 }
 
 html, body {
   @apply font-comic-code;
 }
 
-.animate-button-pop {
-  animation: button-pop var(--animation-btn, 0.25s) ease-out;
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
 }
+
 /* If you need to add custom styles, do so down here */

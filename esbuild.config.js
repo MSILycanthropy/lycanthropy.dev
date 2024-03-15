@@ -39,7 +39,7 @@ const esbuildOptions = {
     excludeFilter: /\.(dsd|lit)\.css$/
   },
   loader: {
-    '.otf': 'file'
+    '.woff': 'file',
   },
   publicPath: "/lycanthropy.dev/_bridgetown/static"
 }
