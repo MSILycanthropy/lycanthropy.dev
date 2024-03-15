@@ -41,7 +41,7 @@ const esbuildOptions = {
   loader: {
     '.woff': 'file',
   },
-  publicPath: "/lycanthropy.dev/_bridgetown/static"
+  publicPath: ""
 }
 
 build(esbuildOptions)
