@@ -4,11 +4,6 @@ import * as Turbo from "@hotwired/turbo"
 
 import { Application } from "@hotwired/stimulus"
 
-document.addEventListener("turbo:before-visit", () => {
-  // Push to history on Turbo visit
-  window.history.pushState({}, "")
-})
-
 /**
  * Adds support for declarative shadow DOM. Requires your HTML <head> to include:
  * `<meta name="turbo-cache-control" content="no-cache" />`
