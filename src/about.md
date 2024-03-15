@@ -3,11 +3,11 @@ layout: about
 title: About
 ---
 
-Hiya, heya, how's it going?
+Hiya, heya, how's it going? I'm Ethan.
 
-Welcome to [https://lycanthropy.dev](https://lycanthropy.dev), my place to write about things I am passionate about.
-Most of those things are probably Ruby, Rust or Math related. That's basically all I care about doing these days, so
-get ready to read a lot that here.
+Welcome to [https://lycanthropy.dev](https://lycanthropy.dev), the place I write about nerdy stuff.
+I'm incredibly passionate about Ruby, Rust and Math, so get ready for a lot of that. I'm a software engineer
+with a focus on web stuff, but I'm an avid dabbler, so you'll find a bit of everything here.
 
 Let's talk about the elephant in the room, the font. You might have noticed its _Comic Sans_, \*gasp\*, more specifically it's [Comic Code](https://tosche.net/fonts/comic-code) by [Toshi Omagari](https://tosche.net/profile). Keep and open mind and give it a try, you might be surprised.
 
