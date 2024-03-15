@@ -3,7 +3,7 @@ import { interpolate } from "flubber";
 import { select } from "d3";
 
 export default class extends Controller {
-  static targets = ["original", "morph"]
+  static targets = ["original", "morph", "output"]
 
   initialize() {
     this.start = this.originalTarget.querySelector("path").getAttribute("d");
@@ -14,7 +14,7 @@ export default class extends Controller {
   }
 
   morph() {
-    select(this.originalTarget.querySelector("path"))
+    select(this.outputTarget.querySelector("path"))
       .style('display', 'block')
       .call((sel) => {
         this.#animate(sel, this.start, this.end, this.endFill)
@@ -22,7 +22,7 @@ export default class extends Controller {
   }
 
   unmorph() {
-    select(this.originalTarget.querySelector("path"))
+    select(this.outputTarget.querySelector("path"))
       .style('display', 'block')
       .call((sel) => {
         this.#animate(sel, this.end, this.start, this.startFill)
