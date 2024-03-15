@@ -21,6 +21,7 @@ import components from "$components/**/*.{js,jsx,js.rb,css}"
 window.Stimulus = Application.start()
 
 import controllers from "./controllers/**/*.{js,js.rb}"
+import { local } from "d3"
 Object.entries(controllers).forEach(([filename, controller]) => {
   if (filename.includes("_controller.") || filename.includes("-controller.")) {
     const identifier = filename.replace("./controllers/", "")
@@ -32,3 +33,28 @@ Object.entries(controllers).forEach(([filename, controller]) => {
   }
 })
 
+localizeDates(true);
+
+document.addEventListener("turbo:render", () => {
+  localizeDates();
+});
+
+function localizeDates(finish = false) {
+  [...document.querySelectorAll('[data-localize]')].forEach((element) => {
+    const date = new Date(element.innerText);
+    element.innerText = new Intl.DateTimeFormat(undefined, {
+      dateStyle: "long",
+    }).format(date);
+
+    element.setAttribute("title", new Intl.DateTimeFormat(undefined, {
+      dateStyle: "long",
+      timeStyle: "long",
+    }).format(date));
+
+    if (finish) {
+      element.setAttribute("data-localize", "done");
+    } else {
+      element.removeAttribute("data-localize");
+    }
+  });
+}

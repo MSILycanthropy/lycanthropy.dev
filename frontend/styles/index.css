@@ -21,4 +21,12 @@ html, body {
   display: none;
 }
 
+[data-localize] {
+  opacity: 0;
+}
+
+[data-localize="done"] {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
 /* If you need to add custom styles, do so down here */
