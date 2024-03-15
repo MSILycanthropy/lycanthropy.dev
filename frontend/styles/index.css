@@ -56,15 +56,6 @@ html, body {
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 }
 
-@keyframes translate {
-  0% {
-    transform: translateZ(0);
-  }
-  100% {
-    transform: translateZ(0);
-  }
-}
-
 header {
   view-transition-name: header;
 }
@@ -80,6 +71,24 @@ main {
   animation: none;
   display: block;
   mix-blend-mode: normal;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-neutral/60;
+  @apply transition duration-200 ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply transition duration-200 ease-in-out;
+  @apply cursor-pointer bg-neutral;
 }
 
 /* If you need to add custom styles, do so down here */

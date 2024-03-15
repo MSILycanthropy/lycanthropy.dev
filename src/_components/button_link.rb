@@ -1,5 +1,5 @@
 class ButtonLink < Bridgetown::Component
-  def initialize(href:, text:, selected: false, **props)
+  def initialize(href:, text: nil, selected: false, **props)
     @href = href
     @text = text
     @props = props

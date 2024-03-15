@@ -1,0 +1,11 @@
+<nav class="mx-auto w-fit flex gap-3 lg:gap-6 pt-9 lg:pt-0 lg:absolute bg-base-100 lg:-top-5 lg:left-12 lg:px-2 z-10" data-turbo-permanent>
+  <%= render ButtonLink.new(href: '/', selected: current_path?('/', @page)) do %>
+    Home
+  <% end %>
+  <%= render ButtonLink.new(href: '/about/', selected: current_path?('about', @page)) do %>
+    About
+  <% end %>
+  <%= render ButtonLink.new(href: '/demos/', selected: current_path?('demos', @page)) do %>
+    Demos
+  <% end %>
+</nav>
