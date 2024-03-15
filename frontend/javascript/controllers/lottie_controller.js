@@ -8,16 +8,20 @@ export default class extends Controller {
   initialize() {
     this.element.querySelector('svg')?.remove();
 
-    this.animation = lottie.loadAnimation({
-      container: this.element,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "/under_construction.json"
+    setTimeout(() => {
+      this.animation = lottie.loadAnimation({
+        container: this.element,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/under_construction.json"
+      });
     });
   }
 
   disconnect() {
     this.animation.destroy();
+
+    this.element.querySelector('svg')?.remove();
   }
 }
