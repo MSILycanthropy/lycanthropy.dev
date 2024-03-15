@@ -6,7 +6,7 @@ import { Application } from "@hotwired/stimulus"
 
 document.addEventListener("turbo:before-visit", () => {
   // Push to history on Turbo visit
-  window.history.pushState({}, "", event.detail.url)
+  window.history.pushState({}, "")
 })
 
 /**
