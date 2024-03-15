@@ -5,7 +5,7 @@ import { select } from "d3";
 export default class extends Controller {
   static targets = ["original", "morph"]
 
-  connect() {
+  initialize() {
     this.start = this.originalTarget.querySelector("path").getAttribute("d");
     this.end = this.morphTarget.querySelector("path").getAttribute("d");
 

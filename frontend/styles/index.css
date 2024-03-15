@@ -56,4 +56,31 @@ html, body {
   animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 }
+
+@keyframes translate {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+
+header {
+  view-transition-name: header;
+}
+
+main {
+  view-transition-name: main;
+}
+
+::view-transition-old(header)
+::view-transition-new(header),
+::view-transition-old(main),
+::view-transition-new(main) {
+  animation: none;
+  display: block;
+  mix-blend-mode: normal;
+}
+
 /* If you need to add custom styles, do so down here */

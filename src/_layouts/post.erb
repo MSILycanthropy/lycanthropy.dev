@@ -2,8 +2,11 @@
 layout: vertical
 ---
 
-<h1><%= data.title %></h1>
+<div class="view-transition-content">
+  <h1><%= data.title %></h1>
 
-<article class="prose lg:prose-xl prose-code:text-[0.875em] prose-code:p-1 prose-code:px-2">
-  <%= yield %>
-</article>
+  <article class="prose lg:prose-xl prose-code:text-[0.875em] prose-code:p-1 prose-code:px-2">
+
+    <%= yield %>
+  </article>
+</div>
