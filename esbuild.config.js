@@ -40,8 +40,7 @@ const esbuildOptions = {
   },
   loader: {
     '.woff': 'file',
-  },
-  publicPath: ""
+  }
 }
 
 build(esbuildOptions)

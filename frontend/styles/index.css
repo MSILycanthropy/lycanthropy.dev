@@ -9,8 +9,7 @@
 
 @font-face {
   font-family: "Comic Code Ligatures";
-  src: local('')
-       url("../fonts/ComicCodeLigatures-Regular.woff") format("woff")
+  src: url("../fonts/ComicCodeLigatures-Regular.woff") format("woff")
 }
 
 html, body {
