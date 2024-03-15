@@ -15,8 +15,10 @@
           <%= render ButtonLink.new(href: '/demos', text: "Demos", selected: current_path?('demos', page)) %>
         </nav>
 
-        <div class="lg:p-12 h-full overflow-y-scroll scrollbar-hidden">
-          <%= yield %>
+        <div class="lg:p-12 h-full">
+          <div class="h-full overflow-y-auto">
+            <%= yield %>
+          </div >
         </div>
       </main>
     </div>

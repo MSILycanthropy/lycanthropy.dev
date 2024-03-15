@@ -17,9 +17,6 @@ html, body {
   @apply font-comic-code;
 }
 
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-}
 
 [data-localize] {
   opacity: 0;

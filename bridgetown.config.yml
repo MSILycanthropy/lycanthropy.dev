@@ -30,5 +30,5 @@ base_path: "/lycanthropy.dev" # the subpath of your site, e.g. /blog. If you set
 # update `publicPath`.
 
 # timezone: America/Los_Angeles
-# pagination:
-#   enabled: true
+pagination:
+  enabled: true
