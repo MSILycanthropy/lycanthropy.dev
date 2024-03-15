@@ -9,7 +9,7 @@ paginate:
 ---
 <%# TODO: Container queries here %>
 
-<div class="grid grid-cols-1 lg:gap-8 mx-auto w-fit mt-8 lg:mt-0">
+<div class="grid grid-cols-1 lg:gap-8 mx-auto w-fit mt-8 mb-8 lg:mb-0 lg:mt-0">
   <% paginator.resources.each do |post| %>
     <div class="border-t border-neutral pt-4 px-6 lg:border-none">
       <%= render Link.new(href: post.relative_url, relative: false, class: "underline text-lg @5xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
@@ -32,16 +32,15 @@ paginate:
     </div>
   <% end %>
 </div>
-<div class="absolute bottom-4 flex justify-between">
-  <% if paginator.previous_page.present? %>
-    <%= render ButtonLink.new(href: paginator.previous_page_path, relative: false) do %>
-      test!
-    <% end %>
+<% if paginator.previous_page.present? %>
+  <%= render ButtonLink.new(href: paginator.previous_page_path, relative: false, class: 'absolute bottom-0.5 left-2 lg:bottom-8 lg:left-8') do %>
+    Prev
   <% end %>
+<% end %>
 
-  <% if paginator.next_page.present? %>
-    <%= render ButtonLink.new(href: paginator.next_page_path, relative: false) do %>
-      test!
-    <% end %>
+<% if paginator.next_page.present? %>
+  <%= render ButtonLink.new(href: paginator.next_page_path, relative: false, class: 'absolute bottom-0.5 right-2 lg:bottom-8 lg:right-8') do %>
+    Next
   <% end %>
-</div>
+<% end %>
+
