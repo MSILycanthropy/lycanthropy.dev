@@ -1,8 +1,4 @@
 ---
-layout: page
-title: Posts
+layout: construction
+title: Demos
 ---
-
-### Currently Under Construction
-
-<div data-controller="lottie"></div>

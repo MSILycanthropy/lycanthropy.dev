@@ -24,6 +24,7 @@
     "@hotwired/turbo": "^8.0.4",
     "d3": "^7.9.0",
     "flubber": "^0.4.2",
+    "lottie-web": "^5.12.2",
     "turbo-shadow": "^1.2.0"
   }
 }
