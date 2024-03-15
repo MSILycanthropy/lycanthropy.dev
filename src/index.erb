@@ -9,7 +9,7 @@ paginate:
 ---
 <%# TODO: Container queries here %>
 
-<div class="grid grid-cols-1 lg:gap-8 mx-auto w-fit mt-8 lg:mt-0">
+<div class="grid grid-cols-1 lg:gap-8 mx-auto w-fit mt-8 lg:mt-0 view-transition-content">
   <% paginator.resources.each do |post| %>
     <div class="border-t border-neutral pt-4 px-6 lg:border-none">
       <%= render Link.new(href: post.relative_url, relative: false, class: "underline text-lg 2xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
