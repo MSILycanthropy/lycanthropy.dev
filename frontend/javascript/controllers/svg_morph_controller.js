@@ -4,6 +4,7 @@ import { select } from "d3";
 
 export default class extends Controller {
   static targets = ["original", "morph", "output"]
+  static values = { morphed: { type: Boolean, default: false } }
 
   initialize() {
     this.start = this.originalTarget.querySelector("path").getAttribute("d");
@@ -13,7 +14,17 @@ export default class extends Controller {
     this.endFill = this.morphTarget.querySelector("path").getAttribute("fill");
   }
 
+  toggle() {
+    if (this.morphedValue) {
+      this.unmorph()
+    } else {
+      this.morph()
+    }
+  }
+
   morph() {
+    this.morphedValue = true
+
     select(this.outputTarget.querySelector("path"))
       .style('display', 'block')
       .call((sel) => {
@@ -22,6 +33,8 @@ export default class extends Controller {
   }
 
   unmorph() {
+    this.morphedValue = false
+
     select(this.outputTarget.querySelector("path"))
       .style('display', 'block')
       .call((sel) => {

@@ -29,6 +29,6 @@ base_path: "/" # the subpath of your site, e.g. /blog. If you set this option,
 # If you're using esbuild for frontend assets, edit `esbuild.config.js` to
 # update `publicPath`.
 
-# timezone: America/Los_Angeles
+timezone: America/Chicago
 pagination:
   enabled: true

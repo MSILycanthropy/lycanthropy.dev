@@ -36,6 +36,8 @@ div.highlight {
 
   margin-top: 2em;
   margin-bottom: 2em;
+
+  @apply max-w-[90vw] lg:max-w-none;
 }
 
 .highlight pre { background-color: #1a1b26; }
@@ -78,7 +80,7 @@ div.highlight {
 /* Base Style */
 .highlight .k { color: #bb9af7; } /* Keyword Constant */
 .highlight .kc { color: #bb9af7; } /* Keyword Declaration */
-.highlight .kd { color: transparent; } /* Keyword Namespace */
+.highlight .kd { color: #bb9af7; } /* Keyword Namespace */
 .highlight .kn { color: #bb9af7; } /* Keyword Pseudo */
 .highlight .kp { color: #bb9af7; } /* Keyword Reserved */
 .highlight .kr { color: #bb9af7; } /* Keyword Type */

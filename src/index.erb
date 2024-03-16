@@ -14,7 +14,11 @@ paginate:
       <%= render Link.new(href: post.relative_url, relative: false, class: "underline text-lg @5xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
         <%= post.data.title %>
       <% end %>
-      <div class="prose xl:prose truncate"><%= post.summary %></div>
+      <div class="prose truncate">
+        <div class="truncate [&>*]:!m-0">
+          <%= post.summary %>
+        </div>
+      </div>
       <div class="flex justify-center @lg:justify-start mt-2.5 mb-2 gap-1">
         <%= render PostCategories.new(categories: post.data.categories) %>
       </div>
