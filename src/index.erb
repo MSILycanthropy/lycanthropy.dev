@@ -8,8 +8,6 @@ paginate:
   per_page: 5
   permalink: "/page/:num/"
 ---
-<%# TODO: Container queries here %>
-
 <div class="grid grid-cols-1 lg:gap-8 mx-auto w-fit mt-8 mb-8 lg:mb-0 lg:mt-0">
   <% paginator.resources.each do |post| %>
     <div class="border-t border-neutral pt-4 px-6 lg:border-none">
@@ -18,9 +16,7 @@ paginate:
       <% end %>
       <div class="prose xl:prose truncate"><%= post.summary %></div>
       <div class="flex justify-center @lg:justify-start mt-2.5 mb-2 gap-1">
-        <% post.data.categories.each do |category| %>
-          <div class="bg-info rounded-lg text-sm font-bold tracking-wide text-white px-2 py-0.5"><%= category %></div>
-        <% end %>
+        <%= render PostCategories.new(categories: post.data.categories) %>
       </div>
       <div class="text-center text-xs @lg:text-sm font-semibold tracking-wider mt-1 mb-2">
         <span data-localize>

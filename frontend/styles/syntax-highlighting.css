@@ -16,8 +16,22 @@ code {
 
 pre.highlight {
   font-family: 'Comic Code Ligatures';
-  padding: 16px;
   line-height: 1.4;
+
+  @apply my-0;
+}
+
+div.highlight pre.highlight::before {
+  content: unset;
+  margin: unset;
+}
+
+div.highlight {
+  @apply mockup-code;
+  background-color: #272822;
+
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .highlight pre { background-color: #272822; }

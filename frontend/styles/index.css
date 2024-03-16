@@ -16,7 +16,6 @@ html, body {
   @apply font-comic-code;
 }
 
-
 [data-localize] {
   opacity: 0;
 }
@@ -64,10 +63,16 @@ main {
   view-transition-name: main;
 }
 
+.view-transition-categories {
+  view-transition-name: categories;
+}
+
 ::view-transition-old(header)
 ::view-transition-new(header),
 ::view-transition-old(main),
-::view-transition-new(main) {
+::view-transition-new(main),
+::view-transition-old(categories),
+::view-transition-new(categories) {
   animation: none;
   display: block;
   mix-blend-mode: normal;

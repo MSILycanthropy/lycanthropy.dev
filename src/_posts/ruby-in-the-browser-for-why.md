@@ -26,3 +26,28 @@ suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium
 modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam
 totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam
 quasi aliquam eligendi, placeat qui corporis!
+
+
+```ruby
+def hello
+  puts "Hello, World!"
+end
+```
+
+```javascript
+import { hello } from 'hello'
+
+hello()
+```
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby in the Browser</title>
+  </head>
+  <body>
+    <script src="hello.js"></script>
+  </body>
+</html>
+```

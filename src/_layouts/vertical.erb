@@ -5,7 +5,7 @@ layout: default
 <div class="flex flex-col lg:gap-24 flex-1 items-center justify-center mx-4">
   <%= render Header.new(metadata: site.metadata, resource: resource) %>
   <main data-view-more-target="more"
-        class="w-fit relative lg:w-[50vh] xl:w-1/2 2xl:w-5/12 mx-auto lg:m-0 lg:ring-1 lg:ring-neutral lg:rounded-3xl ">
+        class="lg:@container w-fit relative lg:w-[50vh] xl:w-1/2 2xl:w-5/12 mx-auto lg:m-0 lg:ring-1 lg:ring-neutral lg:rounded-3xl ">
     <%= render Nav.new(page:) %>
 
     <div class="lg:p-12 h-full">

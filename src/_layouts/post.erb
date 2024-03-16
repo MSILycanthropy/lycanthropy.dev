@@ -3,9 +3,17 @@ layout: vertical
 ---
 
 
-<h1><%= data.title %></h1>
+<div class="prose lg:prose-xl prose-code:text-[0.875em] prose-code:p-1 prose-code:px-2 mx-auto">
+  <h1 class="w-fit mx-auto underline text-lg @5xl:text-2xl text-neutral font-semibold">
+    <%= resource.data.title %>
+  </h1>
 
-<article class="prose lg:prose-xl prose-code:text-[0.875em] prose-code:p-1 prose-code:px-2">
-  <%= yield %>
-</article>
+  <div class="absolute flex gap-1 -top-3 right-6 px-1 bg-base-100">
+    <%= render PostCategories.new(categories: resource.data.categories) %>
+  </div>
+
+  <article>
+    <%= yield %>
+  </article>
+</div>
 
