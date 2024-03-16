@@ -33,6 +33,10 @@ Object.entries(controllers).forEach(([filename, controller]) => {
   }
 })
 
+import * as flubber from "flubber"
+
+
+
 localizeDates(true);
 
 document.addEventListener("turbo:render", () => {

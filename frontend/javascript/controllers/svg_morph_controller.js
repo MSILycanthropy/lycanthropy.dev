@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
-import { interpolate } from "flubber";
-import { select } from "d3";
+import { separate, combine, splitPathString } from "flubber";
+import { select, easeCubicInOut } from "d3";
 
 export default class extends Controller {
   static targets = ["original", "morph", "output"]
@@ -8,7 +8,7 @@ export default class extends Controller {
 
   initialize() {
     this.start = this.originalTarget.querySelector("path").getAttribute("d");
-    this.end = this.morphTarget.querySelector("path").getAttribute("d");
+    this.ends = splitPathString(this.morphTarget.querySelector("path").getAttribute("d"))
 
     this.startFill = this.originalTarget.querySelector("path").getAttribute("fill");
     this.endFill = this.morphTarget.querySelector("path").getAttribute("fill");
@@ -25,32 +25,42 @@ export default class extends Controller {
   morph() {
     this.morphedValue = true
 
-    select(this.outputTarget.querySelector("path"))
-      .style('display', 'block')
-      .call((sel) => {
-        this.#animate(sel, this.start, this.end, this.endFill)
-      })
+    const sel = select(this.outputTarget.querySelector("path"))
+
+    this.#forward(sel, this.start, this.ends, this.endFill)
   }
 
   unmorph() {
     this.morphedValue = false
 
-    select(this.outputTarget.querySelector("path"))
-      .style('display', 'block')
-      .call((sel) => {
-        this.#animate(sel, this.end, this.start, this.startFill)
-      })
+    const sel = select(this.outputTarget.querySelector("path"))
+
+    this.#backward(sel, this.start, this.ends, this.startFill)
   }
 
-  #animate(sel, start, end, fill) {
+  #forward(sel, start, ends, fill) {
+    const interpolator = separate(start, ends, { single: true })
+
     sel
-      .datum({ start, end })
       .transition()
-      .attrTween('d', function (d) {
-        return interpolate(d.start, d.end)
-      })
       .duration(750)
-      .delay(100)
+      .ease(easeCubicInOut)
+      .attrTween('d', function () {
+        return interpolator;
+      })
+      .style('fill', fill)
+  }
+
+  #backward(sel, start, ends, fill) {
+    const interpolator = combine(ends, start, { single: true })
+
+    sel
+      .transition()
+      .ease(easeCubicInOut)
+      .duration(750)
+      .attrTween('d', function () {
+        return interpolator;
+      })
       .style('fill', fill)
   }
 }
