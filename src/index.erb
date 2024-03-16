@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 
 layout: horizontal
-title: Home
+title: Posts
 paginate:
   collection: posts
   per_page: 5
@@ -14,8 +14,8 @@ paginate:
       <%= render Link.new(href: post.relative_url, relative: false, class: "underline text-lg @5xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
         <%= post.data.title %>
       <% end %>
-      <div class="prose truncate">
-        <div class="truncate [&>*]:!m-0">
+      <div class="prose xl:prose-lg">
+        <div class="[&>*]:!m-0 [&>*]:truncate">
           <%= post.summary %>
         </div>
       </div>

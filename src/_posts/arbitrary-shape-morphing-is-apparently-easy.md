@@ -16,14 +16,17 @@ So I started trying to figure it out, with a few requirements.
 
 ### The Quest
 
-I kept finding cool solutions for SVG animation, like [Lottie](https://airbnb.design/lottie/) or [this random thing on Medium](https://codeburst.io/svg-morphing-the-easy-way-and-the-hard-way-c117a620b65f). All of them _could_ do what I wanted. But none of them did it in a way I found particularly
+I kept finding cool solutions for SVG animation, like [Lottie](https://airbnb.design/lottie/){:target="_blank"}
+or [this random thing on Medium](https://codeburst.io/svg-morphing-the-easy-way-and-the-hard-way-c117a620b65f){:target="_blank"}
+. All of them _could_ do what I wanted. But none of them did it in a way I found particularly
 appetizing.
 
-There were also some examples using [D3](https://d3js.org/). But to put it bluntly, the D3 examples all looked like garbage.
+There were also some examples using [D3](https://d3js.org/){:target="_blank"}
+. But to put it bluntly, the D3 examples all looked like garbage.
 
-Then I finally found my saving grace, [Noah Veltman](https://noahveltman.com/) and his amazing [flubber](https://github.com/veltman/flubber) library.
-Simply put, Noah is a data visualization wizard. I hightly urge you to go click around [his website](https://noahveltman.com/) a bit and see all his awesome projects. My favorites are [San Francisco Streets](http://sfstreets.noahveltman.com/), [How to Calculate Pi](https://noahveltman.com/pi/), and
-[NYPD Complaints](https://project.wnyc.org/ccrb/).
+Then I finally found my saving grace, [Noah Veltman](https://noahveltman.com/){:target="_blank"} and his amazing [flubber](https://github.com/veltman/flubber){:target="_blank"} library.
+Simply put, Noah is a data visualization wizard. I hightly urge you to go click around [his website](https://noahveltman.com/){:target="_blank"} a bit and see all his awesome projects. My favorites are [San Francisco Streets](http://sfstreets.noahveltman.com/){:target="_blank"}, [How to Calculate Pi](https://noahveltman.com/pi/){:target="_blank"}, and
+[NYPD Complaints](https://project.wnyc.org/ccrb/){:target="_blank"}.
 
 Poking around flubber's README revealed that it hits all my target requirements.
 
@@ -36,10 +39,10 @@ Plus it looks amazing while doing it:
 
 ![Flubber in action](https://user-images.githubusercontent.com/2120446/27014160-e0ce7c04-4ea7-11e7-8da4-5dde839290eb.gif)
 
-If you want to know how flubber works on a deeper level than I'll explain here, check out [Noah's talk at Open Vis Conf 2017](https://youtu.be/PLc1y-gim_0?si=FeYNHoUuRmCvzbVH).
+If you want to know how flubber works on a deeper level than I'll explain here, check out [Noah's talk at Open Vis Conf 2017](https://youtu.be/PLc1y-gim_0?si=FeYNHoUuRmCvzbVH){:target="_blank"}.
 
 ### Mighty Morphin' SVG Rangers
-All my examples will use [D3](https://d3js.org/) to simplify the code. But flubber does work with just
+All my examples will use [D3](https://d3js.org/){:target="_blank"} to simplify the code. But flubber does work with just
 plain old vanilla JS.
 
 Check out how easy it is to use:
@@ -70,7 +73,7 @@ Well that works, technically. But it merges the first Octocat into the eye of th
 
 ### The Correspondence Problem
 
-After watching [Noah's talk](https://youtu.be/PLc1y-gim_0?si=FeYNHoUuRmCvzbVH), I realized the issue.
+After watching [Noah's talk](https://youtu.be/PLc1y-gim_0?si=FeYNHoUuRmCvzbVH){:target="_blank"}, I realized the issue.
 The first Octocat has 1 distinct shape, but the second has _three_, but there is only one SVG path.
 
 So, flubber takes the one path from Octocat 1, and tries to morph it into one of the shapes it finds from Octocat 2.
@@ -78,7 +81,7 @@ But, there are really 3 shapes from Octocat 2.
 
 The issue is that there is not a one to one correspondence between shapes in Octocat 1, and shapes in Octocat 2.
 
-This is more widely known as [The Correspondance Problem](https://en.wikipedia.org/wiki/Correspondence_problem)
+This is more widely known as [The Correspondance Problem](https://en.wikipedia.org/wiki/Correspondence_problem){:target="_blank"}
 
 Oh no, it's got a name. That probably means it's a hard problem that people haven't solved yet right?
 
@@ -150,7 +153,7 @@ With a few considerations, it's _suprisingly_ simple to morph between any two SV
 While it's not something that you'll want to use for every single interaction, it's an amazing tool
 to have in your belt.
 
-Big shoutouts again to [Noah Veltman](https://noahveltman.com/). Without his work, none of this would be possible.
+Big shoutouts again to [Noah Veltman](https://noahveltman.com/){:target="_blank"}. Without his work, none of this would be possible.
 I again urge you to go check out his stuff and show him some love.
 
 Until the next one,
