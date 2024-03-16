@@ -1,7 +1,7 @@
 ---
 title: "Arbitrary Shape Morphing is Apparently Easy?"
 date: 2024-03-16 15:53:59 -0500
-published: false
+published: true
 categories: [ui,technical]
 layout: post
 ---

@@ -40,6 +40,18 @@ div.highlight {
   @apply max-w-[90vw] lg:max-w-none;
 }
 
+div.highlight ::-webkit-scrollbar {
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0caf5;
+}
+
+div.highlight ::-webkit-scrollbar-track {
+  background-color: #1a1b26;
+}
+
 .highlight pre { background-color: #1a1b26; }
 .highlight .hll { background-color: #1a1b26; }
 .highlight pre { color: #c0caf5; } /* Punctuation */
