@@ -7,6 +7,8 @@ export default class extends Controller {
   static values = { morphed: { type: Boolean, default: false } }
 
   initialize() {
+    console.log(this.morphTarget)
+
     this.start = this.originalTarget.querySelector("path").getAttribute("d");
     this.end = this.morphTarget.querySelector("path").getAttribute("d");
 
