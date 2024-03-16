@@ -14,6 +14,8 @@
 
 html, body {
   @apply font-comic-code;
+
+  @apply selection:bg-info/80;
 }
 
 [data-localize] {

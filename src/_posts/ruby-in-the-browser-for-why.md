@@ -29,8 +29,25 @@ quasi aliquam eligendi, placeat qui corporis!
 
 
 ```ruby
-def hello
-  puts "Hello, World!"
+def bubble_sort(list)
+  return list if list.size <= 1 # already sorted
+
+  swapped = true
+  while swapped
+    swapped = false
+    0.upto(list.size - 2) do |i|
+      if list[i] > list[i + 1]
+        list[i], list[i + 1] = list[i + 1], list[i] # swap values
+        swapped = true
+      end
+    end
+  end
+
+(test.thing)
+
+  \0x1234
+
+  list
 end
 ```
 
@@ -38,6 +55,8 @@ end
 import { hello } from 'hello'
 
 hello()
+
+console.log('Hello from JavaScript!')
 ```
 
 ```html
