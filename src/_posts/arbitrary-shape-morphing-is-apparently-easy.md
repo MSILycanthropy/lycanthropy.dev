@@ -71,21 +71,19 @@ And a more advanced case:
 
 Well that works, technically. But it merges the first Octocat into the eye of the second Octocat. Not quite what I expected. What's going on here?
 
-### The Correspondence Problem
+### One to One Mappings
 
 After watching [Noah's talk](https://youtu.be/PLc1y-gim_0?si=FeYNHoUuRmCvzbVH){:target="_blank"}, I realized the issue.
 The first Octocat has 1 distinct shape, but the second has _three_, but there is only one SVG path.
 
-So, flubber takes the one path from Octocat 1, and tries to morph it into one of the shapes it finds from Octocat 2.
-But, there are really 3 shapes from Octocat 2.
+So, flubber does it's best. It picks one of the shapes in Octocat 2 and tries to morph Octocat 1 into that. It then shows
+the full SVG after the last frame.
 
 The issue is that there is not a one to one correspondence between shapes in Octocat 1, and shapes in Octocat 2.
 
-This is more widely known as [The Correspondance Problem](https://en.wikipedia.org/wiki/Correspondence_problem){:target="_blank"}
+Well.. that sounds like a hard problem to solve. There's probably no super simple easy to use solution right?
 
-Oh no, it's got a name. That probably means it's a hard problem that people haven't solved yet right?
-
-_Luckily_, Noah already solved this problem for our use case. Flubber comes with some awesome utilities. The ones we care about are `splitPathString`, `combine` and `separate`.
+_Turns out_, Noah already solved this problem for us. Flubber comes with some awesome utilities. The ones we care about are `splitPathString`, `combine` and `separate`.
 
 Here's what they do:
 - `separate` -> Works like `interpolate` but for splitting one shape into many.
