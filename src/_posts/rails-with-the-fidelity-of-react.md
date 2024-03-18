@@ -1,7 +1,6 @@
 ---
-title: "Modern Rails Part 1: Stealing from the SPA"
+title: "Modern Rails: Stealing from the SPA"
 date: 2024-03-17 15:06:08 -0500
-published: false
 categories: [rails,ui,hotwire]
 layout: post
 ---
