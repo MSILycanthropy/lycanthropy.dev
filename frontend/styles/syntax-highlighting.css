@@ -61,7 +61,7 @@ div.highlight ::-webkit-scrollbar-track {
 .highlight .na { color: #bb9af7; } /* Name Builtin */
 .highlight .nb { color: #c0caf5; } /* Name Class */
 .highlight .nc { color: #c0caf5; } /* Name Constant */
-.highlight .no { color: #c0caf5; } /* Name Decorator */
+.highlight .no { color: #bb9af7; } /* Name Decorator */
 .highlight .nd { color: #c0caf5; } /* Name Entity */
 .highlight .ni { color: #c0caf5; } /* Name Exception */
 .highlight .ne { color: #bb9af7; } /* Name Function */

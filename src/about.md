@@ -15,6 +15,6 @@ Some background on me. I studied Math and I've got a degree in that, but I've be
 
 You can find all of my projects on my GitHub on the left. Hover the image, it does something cool :)
 
-Have fun exploring, if you find something cool, gimme a shout on my socials!
+Have fun exploring!
 
 \- Ethan

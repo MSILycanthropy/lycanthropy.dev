@@ -4,7 +4,7 @@ import * as Turbo from "@hotwired/turbo"
 
 import { Application } from "@hotwired/stimulus"
 
-document.addEventListener("turbo:before-visit", () => {
+document.addEventListener("turbo:before-visit", (event) => {
   // Push to history on Turbo visit
   window.history.pushState({}, "")
 })
@@ -32,10 +32,6 @@ Object.entries(controllers).forEach(([filename, controller]) => {
     Stimulus.register(identifier, controller.default)
   }
 })
-
-import * as flubber from "flubber"
-
-
 
 localizeDates(true);
 
