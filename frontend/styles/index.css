@@ -92,7 +92,7 @@ main {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -106,7 +106,7 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply transition duration-200 ease-in-out;
-  @apply cursor-pointer bg-neutral;
+  @apply cursor-pointer bg-neutral/90;
 }
 
 /* If you need to add custom styles, do so down here */

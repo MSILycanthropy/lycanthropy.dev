@@ -44,7 +44,7 @@ div.highlight ::-webkit-scrollbar {
   height: 6px;
 }
 
-::-webkit-scrollbar-thumb {
+div.highlight ::-webkit-scrollbar-thumb {
   background-color: #c0caf5;
 }
 
