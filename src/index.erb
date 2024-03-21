@@ -11,7 +11,7 @@ paginate:
 <div class="grid grid-cols-1 lg:gap-8 mx-auto w-fit mt-8 mb-8 lg:mb-0 lg:mt-0">
   <% paginator.resources.each do |post| %>
     <div class="border-t border-neutral pt-4 px-6 lg:border-none">
-      <%= render Link.new(href: post.relative_url, relative: false, class: "underline text-lg @5xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
+      <%= render Link.new(href: "#{post.relative_url}#post", relative: false, class: "underline text-lg @5xl:text-3xl text-neutral hover:text-primary font-semibold") do %>
         <%= post.data.title %>
       <% end %>
       <div class="prose xl:prose-lg">

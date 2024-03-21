@@ -4,11 +4,12 @@ layout: default
 
 <div class="flex flex-col lg:gap-24 flex-1 items-center justify-center mx-4">
   <%= render Header.new(metadata: site.metadata, resource: resource) %>
+  <div id="post"></div>
   <main data-view-more-target="more"
-        class="w-fit relative 2xl:w-5/12 mx-auto lg:m-0 lg:ring-1 lg:ring-neutral lg:rounded-3xl ">
+        class="w-fit relative 2xl:w-5/12 mx-auto lg:m-0 lg:ring-1 h-full lg:ring-neutral lg:rounded-3xl ">
     <%= render Nav.new(page:) %>
 
-    <div class="lg:p-12">
+    <div class="lg:p-12 h-full" id="post">
       <%= yield %>
     </div>
   </main>

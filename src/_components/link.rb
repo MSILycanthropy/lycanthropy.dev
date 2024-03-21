@@ -9,21 +9,24 @@ class Link < Bridgetown::Component
   def mapped_props
     return if @props.empty?
 
-    @props.map { |k, v| "#{k.to_s.dasherize}=\"#{v}\"" }.join(" ")
+    @props.map { |k, v| "#{k.to_s.dasherize}=\"#{v}\"" }.join(' ')
   end
 
   def ensure_trailing_slash(href)
     return href if href == '/'
 
     href, query_string = href.split('?')
+    href, anchor = href.split('#')
 
     href = if href.ends_with?('/')
-      href
-    else
-      "#{href}/"
-    end
+             href
+           else
+             "#{href}/"
+           end
 
-    return "#{href}?#{query_string}" if query_string.present?
+    return "#{href}?#{query_string}" if query_string.present? && !anchor.present?
+    return "#{href}##{anchor}" if anchor.present? && !query_string.present?
+    return "#{href}?#{query_string}##{anchor}" if anchor.present? && query_string.present?
 
     href
   end
